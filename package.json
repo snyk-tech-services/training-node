@@ -1,0 +1,11 @@
+{
+  "name": "training-node",
+  "version": "1.0.0",
+  "description": "lalal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Snyk",
+  "license": "MIT"
+}
