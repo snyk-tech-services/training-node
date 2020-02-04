@@ -15,3 +15,4 @@ app.get('/*', (req,res) => res.send(functions.figureOutWhatToSay(req.path)))
 
 app.listen(port, () => console.log("Example app listening on port %s!",port))
 
+module.exports = app
