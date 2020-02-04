@@ -1,0 +1,29 @@
+kind: "Deployment"
+apiVersion: "apps/v1"
+metadata:
+  name: "matts-snyk-command"
+  namespace: snyk-soc2
+  labels:
+    name: "matts-snyk-command"
+spec:
+  replicas: 1
+  minReadySeconds: 10
+  selector:
+    matchLabels:
+      name: "matts-snyk-command"
+  template:
+    metadata:
+      labels:
+        name: "matts-snyk-command"
+    spec:
+      containers:
+        -
+          name: "matts-snyk-command"
+          image: "gcr.io/snyk-technical-services/training-node:latest"
+          imagePullPolicy: Always
+          ports:
+            -
+              name: "matts-snyk-command"
+              containerPort: 8888
+              protocol: "TCP"
+          
