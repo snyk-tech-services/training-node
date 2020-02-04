@@ -9,7 +9,7 @@ spec:
     -
       name: "matts-snyk-command"
       port: 8888
-      targetPort: 8888
+      targetPort: 3000
       protocol: "TCP"
   selector:
     name: "matts-snyk-command"
