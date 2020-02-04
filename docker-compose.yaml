@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  redis:
+    container_name: bestify-redis
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - app
+  node:
+    container_name: bestify-node
+    image: node:alpine
+    working_dir: /app
+    command: index.js
+    environment:
+      REDIS_HOST: redis
+    ports:
+      - "3000:3000"
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+    networks:
+      - app
+    depends_on:
+      - redis
+networks:
+  app:
