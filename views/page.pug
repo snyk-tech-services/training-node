@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh', crossorigin='anonymous')
+  
+  body
+    nav.navbar
+      a.navbar-brand
+        strong Bestify
+      ul.nav.mr-auto
+        li.nav-item
+          a.nav-link(href='/') Home
+        li.nav-item
+          a.nav-link('href=/antoine') Antoine's Page
+        li.nav-item
+          a.nav-link('href=/foo/bar') Something Else
+
+    main.container.text-center
+      div.jumbotron
+        h1= headline
+        p= "Do you disagree?"
+        h4= "Who's the best now?"
+        form.justify-content-center.form-inline(method='GET', action='/')
+          input.form-control(name='name', placeholder='Name...')
+          button.btn.btn-secondary(type='submit') Bestify
