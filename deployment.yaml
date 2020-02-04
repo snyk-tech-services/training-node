@@ -1,0 +1,28 @@
+kind: "Deployment"
+apiVersion: "apps/v1"
+metadata:
+  name: "training-node"
+  namespace: snyk-antoine
+  labels:
+    name: "training-node"
+spec:
+  replicas: 1
+  minReadySeconds: 10
+  selector:
+    matchLabels:
+      name: "training-node"
+  template:
+    metadata:
+      labels:
+        name: "training-node"
+    spec:
+      containers:
+        -
+          name: "training-node"
+          image: "gcr.io/snyk-technical-service/training-node:latest"
+          imagePullPolicy: Always
+          ports:
+            -
+              name: "training-node"
+              containerPort: 3000
+              protocol: "TCP"
