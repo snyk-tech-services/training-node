@@ -1,0 +1,16 @@
+---
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: "training-node"
+  namespace: snyk-antoine
+spec:
+  ports:
+    -
+      name: "training-node"
+      port: 26000
+      targetPort: 3000
+      protocol: "TCP"
+  selector:
+    name: "training-node"
+  type: "LoadBalancer"
