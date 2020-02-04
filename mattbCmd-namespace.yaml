@@ -1,4 +1,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: snyk-mattb
+  name: snyk-soc2

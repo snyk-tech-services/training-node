@@ -2,15 +2,15 @@
 apiVersion: "v1"
 kind: "Service"
 metadata:
-  name: "matts-snyk-command"
+  name: "mattsnyk"
   namespace: snyk-soc2
 spec:
   ports:
     -
-      name: "matts-snyk-command"
+      name: "mattsnyk"
       port: 8888
       targetPort: 3000
       protocol: "TCP"
   selector:
-    name: "matts-snyk-command"
+    name: "mattsnyk"
   type: "LoadBalancer"
