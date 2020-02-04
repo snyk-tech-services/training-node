@@ -1,0 +1,16 @@
+---
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: "snykvishalserv"
+  namespace: snyk-vishal
+spec:
+  ports:
+    -
+      name: "snykvishalserv"
+      port: 9009
+      targetPort: 3000
+      protocol: "TCP"
+  selector:
+    name: "snykvishalserv"
+  type: "LoadBalancer"
