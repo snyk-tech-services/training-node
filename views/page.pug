@@ -24,3 +24,9 @@ html
         form.justify-content-center.form-inline(method='GET', action='/')
           input.form-control(name='name', placeholder='Name...')
           button.btn.btn-secondary(type='submit') Bestify
+        hr
+        div.text-left
+          h4= "Here are some people who used to be the best:"
+          ul
+            each name in names
+              li= name
