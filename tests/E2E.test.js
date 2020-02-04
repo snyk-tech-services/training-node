@@ -1,11 +1,6 @@
 const request = require('supertest')
 const app = require('../index.js')
 
-const redis = require('redis')
-const redis_mock = require('redis-mock')
-
-jest.spyOn(redis, 'createClient').mockImplementation(redis_mock.createClient)
-
 describe('Test the root path', () => {
     test('It should be 200 OK + "is the best"', (done) => {
         request(app).get('/').then((response) => {

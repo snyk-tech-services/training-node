@@ -4,8 +4,7 @@ const app = express()
 const port = 3000
 const redis_port = 6379
 const redis_host = process.env.REDIS_HOST
-
-const redis = require('redis')
+const redis = (process.env.NODE_ENV == 'test') ? require('redis-mock') : require('redis')
 
 redis_client = redis.createClient({
   port: redis_port,
