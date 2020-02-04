@@ -3,15 +3,17 @@ const functions = require('./functions')
 const app = express()
 const port = 3000
 
-app.get('/', (req, res) => res.send("Hello world"))
+app.set('view engine', 'pug')
 
+app.get('/', function(req, res) {
+	nameToBestify = req.query.name ? req.query.name : 'Someone'
+	res.render('page', { title: "Home", headline: functions.bestify(nameToBestify) })
+})
 
-
-app.get('/antoine', (req,res) => res.send(functions.bestify('Antoine')))
-
+app.get('/antoine', (req,res) => res.render('page', { title: "Antoine's Page", headline: functions.bestify('Antoine') }))
 
 // Last catchall if nothing matches before that !
-app.get('/*', (req,res) => res.send(functions.figureOutWhatToSay(req.path)))
+app.get('/*', (req,res) => res.render('page', { title: "Hmmmm....", headline: functions.figureOutWhatToSay(req.path) }))
 
 app.listen(port, () => console.log("Example app listening on port %s!",port))
 
