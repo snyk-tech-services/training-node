@@ -19,4 +19,4 @@ module.exports = app
 
 console.log("This is Laura's code change")
 
-consile.log("Trying out code change x2~~~")
+console.log("Trying out code change x2~~~")
